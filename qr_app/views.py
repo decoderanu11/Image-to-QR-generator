@@ -59,14 +59,9 @@ def logout(request):
 @login_required
 def home(request):
     if request.user.is_authenticated:
-        # print(request.user)
         form = ImageUploadForm()
         user = request.user
         images = UploadedImage.objects.filter(user=user)
-        # print(images)
-        for image in images:
-            print(image.image.url)
-            print(image.qr_code.url)
         context = {
             'form':form,
             'images':images
@@ -89,7 +84,6 @@ def upload_image(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            print(form.instance)
             form.instance.user = request.user
             form.save()
             return redirect('home')
@@ -153,14 +147,6 @@ def swap_image_qr(request,id,swap):
         </a>
         """)
     
-    # images = UploadedImage.objects.all()
-    # for image in images:
-    #     temp = image.image
-    #     image.image = image.qr_code
-    #     image.qr_code = temp
-    #     image.save()
-    # return redirect('image_success'
-
 @login_required
 def download_image(request,id,content):
     if request.user.is_authenticated:

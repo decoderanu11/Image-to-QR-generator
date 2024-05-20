@@ -22,8 +22,6 @@ class UploadedImage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
     
     def save(self, *args, **kwargs):
-        # print(self.id)
-        # Compress the image
         img = Image.open(self.image)
         img_io = BytesIO()
         foramt = img.format
