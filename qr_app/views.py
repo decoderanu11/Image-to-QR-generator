@@ -51,7 +51,7 @@ def register(request):
         return redirect('home')
     form = UserRegisterForm()
     return render(request,'authentications/register.html',{'form':form})
-
+@login_required
 def logout(request):
     if request.user:
         alogout(request)
@@ -84,6 +84,7 @@ def compress_image(image):
     new_image = ContentFile(im_io.getvalue(), name=image.name)
     return new_image
 
+
 def upload_image(request):
     if request.method == 'POST':
         form = ImageUploadForm(request.POST, request.FILES)
@@ -100,6 +101,7 @@ def image_success(request):
     images = UploadedImage.objects.all()
     return render(request, 'home/image_success.html', {'images': images})
 
+@login_required
 def delete_confirm(request,id):
     if request.user.is_authenticated:
         image = UploadedImage.objects.get(id=id)
@@ -107,7 +109,7 @@ def delete_confirm(request,id):
     messages.error(request, 'Something went wrong')
     return redirect('home')
 
-
+@login_required
 def delete_image(request,id):
     try:
         if request.user.is_authenticated:
@@ -122,7 +124,7 @@ def delete_image(request,id):
         messages.error(request, 'Something went wrong')
         return redirect('home')
 
-
+@login_required
 def swap_image_qr(request,id,swap):
     image = UploadedImage.objects.get(id=id)
     if swap == 'img':
@@ -159,6 +161,7 @@ def swap_image_qr(request,id,swap):
     #     image.save()
     # return redirect('image_success'
 
+@login_required
 def download_image(request,id,content):
     if request.user.is_authenticated:
         try:
