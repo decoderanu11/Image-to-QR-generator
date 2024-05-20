@@ -44,15 +44,15 @@ pip install -r requirements.txt
 
 ### Set AWS keys in .env file
 
-'''bash
+```bash
  AWS_ACCESS_KEY_ID = AccessKey
  AWS_SECRET_ACCESS_KEY = SecretKey
  AWS_STORAGE_BUCKET_NAME = BucketName
-'''
+```
 
 ### Setup Django Migrations
 
-``'bash
+```bash
 #!/bin/bash
 
 echo "Setting up the Django project..."
@@ -66,13 +66,13 @@ python manage.py migrate
 python manage.py collectstatic --noinput
 
 echo "Setup complete. You can now run the server with 'python manage.py runserver' "
-'''
+```
 
 ### Run Django Server
 
-``'bash
+```bash
 python manage.py runserver
-'''
+```
 
 #server will start on http://127.0.0.1:8000/
 
