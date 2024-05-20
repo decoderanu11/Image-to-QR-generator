@@ -1,0 +1,90 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block body %}
+{% if messages %}
+        {% for message in messages %}
+            
+                <div class="alert alert-danger" _="init wait 3s remove me" id="error-alert" role="alert">
+                    {% include "home/partial/message.html" %}
+                </div>
+            
+        {% endfor %}
+{% endif %}
+{% include 'navbar.html' %} 
+</div>
+
+{% if user.is_authenticated %}
+    {% include "home/partial/upload-modal.html" %}
+    <div id="image-delete-modal">
+        
+    </div>
+    <div class=" grid grid-cols-1 py-6 gap-4 md:grid-cols-3 md:gap-8 px-8 ">
+        
+    {% if images|length == 0 %}
+        <div id="image-card-{{image.id}}" class=" grid md:grid-rows-5   bg-white gap-4 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div id="image-{{image.id}}" class=" relative md:relative md:row-span-4" >
+                
+                
+                
+                <div class="flex m-5 items-center md:items-center justify-between ">
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">No images yet upload a image </p>
+                    <a _="on click remove .hidden from #default-modal"  class="inline-flex px-4 py-2 items-center sm:px-2 sm:py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" download>
+                        Upload Image
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                          </svg>
+                                      
+                    </a>
+                    
+                </div>
+        
+            </div>
+            <div class="p-5 px-4 py-2  " >
+                
+                
+                
+            </div>
+        </div>
+    {% endif %}
+    
+    {% for image in images %}     
+    {% if forloop.counter0|divisibleby:"3" %}
+    </div>
+    <div class=" grid grid-cols-1 py-6 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-8 px-8 ">
+        {% include 'home/partial/image-card.html' %}
+    {% else %}
+        {% include 'home/partial/image-card.html' %}
+    {% endif %}
+    {% endfor %}
+{% else %}
+
+
+    {% comment %} <div class=" grid  relative justify-center grid-cols-1 items-center content-center  rounded-xl shadow outline ring-1 ring-blue-500 space-y-6 p-8 w-[300px]  mx-auto bg-gray-300 ">
+       
+        <h1 class="text-3xl font-bold text-center mt-10">Login first</h1>
+        
+
+        
+        <button 
+        onclick="location.href='{% url 'login' %}'"
+        class="py-2 text-center px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Login
+        </button>
+        
+
+
+        <button
+        onclick="location.href='{% url 'register' %}'" 
+        class="py-2 text-center px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Register
+        </button>
+        
+       
+    
+    </div> {% endcomment %}
+{% endif %}
+
+
+
+{% endblock %}

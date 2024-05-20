@@ -1,0 +1,11 @@
+*.zip
+__pycache__/
+venv/
+output/
+*.cfg
+*.log
+*.sqlite3
+assets/
+functionalities.txt
+readme.md
+.gitignore

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+	<title>  IMAGE QR  </title>
+    {% endblock %}
+    <link rel="shortcut icon" href="https://srf-qr-app.s3.ap-south-1.amazonaws.com/images/media/favicon.ico" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.js" integrity="sha384-qbtR4rS9RrUMECUWDWM2+YGgN3U4V4ZncZ0BvUcg9FGct0jqXz3PUdVpU1p0yrXS" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script rel="javascript" type="text/javascript" href="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <div class="min-h-screen bg-blue-950">
+    <div class="antialiased bg-green-100 dark-mode:bg-gray-900">
+    <div class="w-full text-gray-700 bg-blue-950 dark-mode:text-gray-200 dark-mode:bg-gray-800">
+    <div id="content " class=" bg-blue-300">
