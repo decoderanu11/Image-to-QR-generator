@@ -43,10 +43,12 @@ pip install -r requirements.txt
 ```
 
 ### Set AWS keys in .env file
+
+'''bash
  AWS_ACCESS_KEY_ID = AccessKey
  AWS_SECRET_ACCESS_KEY = SecretKey
  AWS_STORAGE_BUCKET_NAME = BucketName
-
+'''
 
 ### Setup Django Migrations
 
