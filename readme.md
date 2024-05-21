@@ -4,6 +4,7 @@ This project is a simple Django application that allows users to upload an image
 
 ## Features
 
+- Authentication (Account authentication) login, register etc
 - Image upload
 - Image compression
 - QR code generation for the image URL
@@ -77,6 +78,29 @@ python manage.py runserver
 #server will start on http://127.0.0.1:8000/
 
 
-## Thankyou for Visiting :- [Anurag Sharma😊](https://github.com/decoderanu11)
+## Thankyou for Visiting :- [Anurag Sharma😊](https://github.com/decoderanu11), [Linkedin](https://www.linkedin.com/in/anurag-sharma-698990100/)
+
+### Screenshot's
+- Home Page
+
+![Screenshot 2024-05-21 181516](https://github.com/decoderanu11/Image-to-QR-generator/assets/107468645/49b4351a-a40c-4d0f-8705-66f1120a1699)
+
+- Dynamically Qr Code
+- ![Screenshot 2024-05-21 181851](https://github.com/decoderanu11/Image-to-QR-generator/assets/107468645/2b032dda-24b3-4983-88ae-3b322acfbc1c)
+
+- User authentication
+- ![Screenshot 2024-05-21 181914](https://github.com/decoderanu11/Image-to-QR-generator/assets/107468645/2b5d5ea3-3be5-4757-be36-3b9b4347258c)
+
+- ![Screenshot 2024-05-21 181930](https://github.com/decoderanu11/Image-to-QR-generator/assets/107468645/9f31d20a-a1ca-41b3-b30b-819237098422)
+
+- Responsive
+- ![Screenshot 2024-05-21 181644](https://github.com/decoderanu11/Image-to-QR-generator/assets/107468645/97e05e16-342d-4e45-baca-2016e2ab4e32) ![Screenshot 2024-05-21 181728](https://github.com/decoderanu11/Image-to-QR-generator/assets/107468645/4345d4df-1b24-4174-af2f-6b40a55b2747)
+
+
+
+
+
+
+
 
 
